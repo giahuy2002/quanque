@@ -1,0 +1,285 @@
+\documentclass[18pt]{article}
+%\usepackage[english,vietnam]{babel}
+\usepackage[utf8]{vietnam}
+\usepackage[utf8]{inputenc}
+%\usepackage[francais]{babel}
+\usepackage{a4wide,amssymb,epsfig,latexsym,multicol,array,hhline,fancyhdr}
+\usepackage[left=2cm,right=2cm,top=2cm,bottom=2.5cm]{geometry}
+\usepackage[framemethod=tikz]{mdframed}
+\usepackage{amsmath}
+\usepackage{lastpage}
+\usepackage[lined,boxed,commentsnumbered]{algorithm2e}
+\usepackage{enumerate}
+\usepackage{niceframe}
+\usepackage{color}
+\usepackage{framed}
+\usepackage{fancybox}
+\usepackage{subfigure}
+\usepackage{graphicx}							% Standard graphics package
+\usepackage{array}
+\usepackage{longtable}
+\usepackage{tabularx, caption}
+\usepackage{multirow}
+\usepackage{multicol}
+\usepackage{longfbox}
+\usepackage{rotating}
+\usepackage{graphics}
+\usepackage{geometry}
+\usepackage{setspace}
+\usepackage{epsfig}
+\usepackage{tikz}
+\usepackage{indentfirst}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usetikzlibrary{arrows,snakes,backgrounds}
+\usepackage{hyperref}
+\hypersetup{urlcolor=blue,linkcolor=black,citecolor=black,colorlinks=true} 
+\usepackage{pstcol} 								% PSTricks with the standard color package
+\usepackage{cite}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhead{} % clear all header fields
+\fancyhead[L]{
+	\begin{tabular}{rl}
+		\begin{picture}(25,15)(0,0)
+		\put(0,-8){\includegraphics[width=8mm, height=8mm]{hcmut.png}}
+		%\put(0,-8){\epsfig{width=10mm,figure=hcmut.eps}}
+		\end{picture}&
+		%\includegraphics[width=8mm, height=8mm]{hcmut.png} & %
+		\begin{tabular}{l}
+			\textbf{\bf \ttfamily Đại Học Bách Khoa Hồ Chí Minh}\\
+			\textbf{\bf \ttfamily Khoa Khoa Học và Kỹ Thuật Máy Tính}
+		\end{tabular} 	
+	\end{tabular}
+}
+
+\fancyhead[R]{
+	\begin{tabular}{l}
+		\tiny \bf \\
+		\tiny \bf 
+\end{tabular}  }
+\fancyfoot{} % clear all footer fields
+\fancyfoot[L]{ \bf  \ttfamily Autonomous Car}
+\fancyfoot[R]{\bf  \ttfamily Trang {\thepage}/\pageref{LastPage}}
+ \renewcommand{\footrulewidth}{0.3pt}
+
+
+%%%
+  \makeatletter
+\newcounter {subsubsubsection}[subsubsection]
+\renewcommand\thesubsubsubsection{\thesubsubsection .\@alph\c@subsubsubsection}
+\newcommand\subsubsubsection{\@startsection{subsubsubsection}{4}{\z@}%
+	{-3.25ex\@plus -1ex \@minus -.2ex}%
+	{1.5ex \@plus .2ex}%
+	{\normalfont\normalsize\bfseries}}
+\newcommand*\l@subsubsubsection{\@dottedtocline{3}{10.0em}{4.1em}}
+\newcommand*{\subsubsubsectionmark}[1]{}
+\makeatother
+\everymath{\color{blue}}
+\sloppy
+ 
+
+
+\begin{document}
+	
+	\begin{titlepage}
+		\begin{tikzpicture}[remember picture,overlay,inner sep=0,outer sep=0]
+		\draw[black!70!black,line width=3pt] ([xshift=-1.75cm,yshift=-1.75cm]current page.north east) coordinate (A)--([xshift=1.75cm,yshift=-1.75cm]current page.north west) coordinate(B)--([xshift=1.75cm,yshift=1.75cm]current page.south west) coordinate (C)--([xshift=-1.75cm,yshift=1.75cm]current page.south east) coordinate(D)--cycle;
+		
+		\draw [blue!70!black,line width=2pt]([yshift=0.4cm,xshift=-0.4cm]A)-- ([yshift=0.4cm,xshift=0.4cm]B)--
+		([yshift=-0.4cm,xshift=0.4cm]B) --([yshift=-0.4cm,xshift=-0.4cm]B)--([yshift=0.4cm,xshift=-0.4cm]C)--([yshift=0.4cm,xshift=0.4cm]C)--([yshift=-0.4cm,xshift=0.4cm]C)-- ([yshift=-0.4cm,xshift=-0.4cm]D)--([yshift=0.4cm,xshift=-0.4cm]D)--([yshift=0.4cm,xshift=0.4cm]D)--([yshift=-0.4cm,xshift=0.4cm]A)--([yshift=-0.4cm,xshift=-0.4cm]A)--([yshift=0.4cm,xshift=-0.4cm]A);
+		
+		
+		
+		
+		\end{tikzpicture}
+		\begin{center}
+			
+			\textbf{ {\Large ĐẠI HỌC QUỐC GIA THÀNH PHỐ HỒ CHÍ MINH \\
+					TRƯỜNG ĐẠI HỌC BÁCH KHOA \\ \underline{ Khoa Khoa Học và Kỹ Thuật Máy Tính }} \\ 
+			}
+			
+		\end{center}
+	
+		
+		\vspace{1cm}
+		
+		\begin{figure}[h!]
+			\begin{center}
+				\includegraphics[width=4cm]{hcmut.png}
+			\end{center}
+		\end{figure}
+		
+		\vspace{1cm}
+		
+		
+	\begin{center}
+		\begin{tabular}{c}
+			
+			{\textbf{{\Huge  NHẬP MÔN ĐIỆN TOÁN }}}\\	
+			~~\\
+			\hline
+			\\
+			\multicolumn{1}{c}{\textbf{{\Large Bài tập lớn }}}\\
+			\\
+			\fontsize{23.5pt}{18pt}\selectfont		\textbf{{\huge Autonomous Car}}\\
+		%	\fontsize{21pt}{17pt}\selectfont			\textbf{{}} \\
+			\\
+			\\
+			\hline
+			
+		\end{tabular}
+		\end{center}
+	
+	
+	\vspace{1cm}
+
+    \begin{center}
+        GVHD: VÕ HOÀNG HẢI NAM\\
+        VÕ HÙNG-2013375\\
+        NGUYỄN DUY HƯNG-2013388\\
+        NGUYỄN TẤN ĐẠT-2012932\\
+        NGUYỄN LƯƠNG GIA HUY-2013314
+        
+    \end{center}
+	
+	
+	        
+	    
+	
+	\begin{center}
+		\bf{ {\large HO CHI MINH CITY, 01/2021}}\\
+	\end{center}
+	\end{titlepage}
+
+\newpage
+\tableofcontents
+\newpage
+\listoffigures
+\newpage
+\section{Autonomous Car là gì?\cite{link}}
+
+\subsection{Định nghĩa về xe tự lái}
+ Các bạn đã quá quen thuộc với những chiếc xe máy hay ô tô đi trên đường hằng ngày phải không nào? Mỗi phương tiện như vậy đều phải cần có người ngồi lên và điều khiển chúng.Có khi nào bạn ngồi vu vơ nghĩ rằng một ngày nào đó các phương tiện đó không cần người điều khiển chúng nhưng chúng vẫn đến đúng nơi cần đến hay không? Nếu bạn nghĩ đó là vô lí thì mình xin thưa rằng đó không là không khả thi mà nó đã là hiện thực rồi đó.Vậy xe tự hành là gì ? Xe tự hành là phương tiện có thể tự lái từ điểm xuất phát đến điểm đến định trước ở chế độ “lái tự động” bằng cách sử dụng các công nghệ và cảm biến khác nhau trong xe, bao gồm điều khiển hành trình thích ứng, hệ thống lái chủ động (lái bằng dây), hệ thống chống bó cứng phanh ( phanh bằng dây), công nghệ định vị GPS, laser và radar.Ngoài ra còn có một số ứng dựng thông minh từ các lĩnh vực khoa học máy tính vô cùng hữu ích hứa hẹn là một trong những sản phẩm công nghệ mang tính đột phá trong những năm tới.
+ \begin{figure}[h]
+\centering 
+\includegraphics[width=140mm]{1.jpg} 
+\caption{Autonomous Car} 
+\label{dinhnghia} 
+\end{figure}
+\subsection{Lợi ích của xe tự lái.}
+ \begin{itemize}
+     \item Đường phố sẽ an toàn hơn.
+     \item Chúng ta sẽ có nhiều thời gian hơn.
+     \item Hiệu suất giao thông được phát huy tối đa .
+     \item Tiết kiệm nhiên liệu đáng kể.
+ \end{itemize}\newpage
+ \begin{figure}[h]
+     \centering
+     \includegraphics[width=100mm]{10.jpg}
+     \caption{Lợi ích của xe tự lái.}
+     \label{fig:my_label}
+ \end{figure}
+ \subsection{Các cấp độ của xe tự lái.}
+ Người ta chia thành 6 cấp độ tự lái từ cấp 0 đến cấp 5 .\\
+ \begin{itemize} 
+\item  Cấp 0: Không có tự hành. 
+\item Cấp 1: Hỗ trợ người lái.
+\item  Cấp 2: Tự hành một phần.
+\item Cấp 3: Tự hành có điều kiện.
+\item Cấp 4: Tự hành cấp cao.
+\item  Cấp 5: Tự hành hoàn toàn.
+\end{itemize} 
+\begin{figure}[h]
+     \centering
+     \includegraphics[width=100mm]{11.jpg}
+     \caption{Các cấp độ xe tự lái.}
+     \label{fig:my_label}
+ \end{figure}\newpage
+ \section{Ứng dụng công nghệ của xe tự lái}
+\subsection{GPS\cite{link}}
+\begin{figure}[h]
+\centering 
+\includegraphics[width=140mm]{2.png} 
+\caption{GPS} 
+\label{dinhnghia} 
+\end{figure}
+GPS( Global Positioning System), hệ thống GPS giúp xe có thể định vị được chính xác vị trí trên bản đồ. Hệ thống này khá quen thuộc với chúng ta khi mọi thiết bị di động hiện giờ đều tích hợp GPS.Nhờ vào hệ thống định vị GPS,Autonomous Car mới phát huy được bản chất của mình.
+
+
+\newpage
+\subsection{Hệ thống IMU (Inertial Measurement Unit)\cite{link2}}
+\begin{figure}[h]
+\centering 
+\includegraphics[width=50mm]{3.png} 
+\caption{INU} 
+\label{dinhnghia} 
+\end{figure}
+Giúp xe có thể biết được góc quay, gia tốc và vận tốc tuyến tính và góc của xe . Cấu tạo của IMU bao gồm 3 cảm biến cơ bản: cảm biến gia tốc (accelerationmeter), con quay hồi chuyển (gyrosope) và la bàn (compass). Thông thường các giá trị “thô” (raw) của các cảm biến này rất nhiều (noise) vậy nên cần các thuật toán để tổng hợp và xử lý data, đưa ra giá trị tối ưu nhất.\newpage
+
+
+\subsection{Cảm biến\cite{link}}
+Cảm biến siêu âm ( Ultrasonic sensors) dùng để do khoảng các đối tượng gần xe và được dùng để hỗ trợ đỗ xe.Bộ phận này hỗ trợ xe xử lí tình hướng tốt hơn.
+\begin{figure}[h]
+\centering 
+\includegraphics[width=130mm]{9.jpg} 
+\caption{Lidar} 
+\label{dinhnghia} 
+\end{figure}\newpage
+\subsection{Hệ thống Lidar\cite{link} }
+Hệ thống Lidar (Light detection and ranging) cảm biến này sử dụng chùm tia lazer quay liên tục để đo khoảng cách với tốc độ lấy mẫu cực kỳ cao, số lượng mẫu có thể đạt được 2.2 triệu mẫu /s, và khoảng cách có thể đo được là hơn 120 m. Dữ liệu truyền về sẽ là các mây điểm (point cloud). Việc xử lý các point cloud này đòi hỏi thuật toán rất phức tạp nhằm nhận diện các vật thể xung quanh và xây dựng bản đồ 3D cho xe tự hành. Bạn có thể tham khảo point cloud data của lidar truyền về bên dưới.
+\begin{figure}[h]
+\centering 
+\includegraphics[width=150mm]{4.jpeg} 
+\caption{Lidar} 
+\label{dinhnghia} 
+\end{figure}
+\subsection{Camera\cite{link}}
+\begin{figure}[h]
+\centering 
+\includegraphics[width=105mm]{5.jpg} 
+\caption{Camera}
+\label{dinhnghia} 
+\end{figure}
+Camera được sử dụng trong xe tự hành thông thường là các dạng camera công nghiệp, được truyền về hệ thống điều khiển thông qua các chuẩn truyền thông công nghiệp như USB3.0, Firewire, Camera Link, Gige,…Hệ thống camera ngày càng được nâng cấp lên 2D thậm chí là 3D, giúp xe quan sát tốt hơn, biết được những vật cản bình thường rất khó thấy bằng mắt thường.\newpage
+
+
+\subsection{Radar\cite{link}}
+\begin{figure}[h]
+\centering 
+\includegraphics[width=130mm]{6.png} 
+\caption{Camera} 
+\label{dinhnghia} 
+\end{figure}
+Hệ thống radar được gắn trước mũi xe, giúp xe có thể phát hiện được các vật cản hoặc các phương tiện phía trước mũi xe, toàn bộ dữ liệu mà radar thu thập được truyền về hệ thống điều khiển để giúp xe có thể đưa ra quyết định chính xác để né vật cản.Đây là một bộ phân vô cùng quan trọng, nó kết hợp với camera giúp cho xe có khả năng xử lí chính xác cao, bảo vệ an toàn cho người tham gia giao thông.\newpage
+
+\subsection{Máy tính trung tâm}
+Máy tính trung tâm (Center Computer) là hệ thống điều khiển trung tâm dùng để xử lý toàn bộ data cảm biến  đưa về. Các bài toán cần giải quyết ở xe tự hành đó là nhận diện biển báo “sign recognition”, nhận diện làn đường “lane detection”, nhận diện vật cản “obstacle recognition” , … sau khi giải quyết các bài toán trên xe sẽ đưa ra quyết định chính xác đường đi “path finding” của xe, cũng như là dự đoán “prediction” các trường hợp có thể xảy ra trên quá trình di chuyển.Đây được xem là bộ xử lí trung tâm quyết định các hoạt động cũng như ra lệnh cho xe làm gì.Nó được xem là bộ não của xe tự lái có vai trò vô cùng quan trọng. Đỉnh cao của công nghệ nói chung và mảng Khoa Học Máy Tính nói riêng được phô diễn hết vẻ đẹp ở đây.
+\begin{figure}[h]
+\centering 
+\includegraphics[width=130mm]{8.jpg} 
+\caption{Máy Tính Trung Tâm} 
+\label{dinhnghia} 
+\end{figure}\newpage
+\section{Những thành tựu của Autonomous Car}
+Không chỉ đơn giản là những lý thuyết khô khan mà kèm theo đó các nhà khoa học , kĩ sư đã bắt tay và hiện thực các ý tưởng sáng tạo của mình để tạo nên những chiếc xe tự lái mang tính đột phá cao làm tiền đề cho cuộc cách mạng bùng nổ và phát triển. đông thời chúng mang lại những thành tựu vô cùng xuất sắc.
+\subsection{Thực hiện hóa ý tưởng về xe tự hành}
+Nếu như năm 2016, những chiếc xe tự vận hành không cần người điều khiển mới nằm ở mặt ý tưởng và thử nghiệm sơ khai thì năm 2017, đã ghi nhận những bước tiến gần hơn đến tương lai mà mọi phương tiện tham gia giao thông sẽ không cần con người tham gia điều khiển.
+
+Không chỉ có những tay chơi quen thuộc trong ngành sản xuất ô tô như Honda, Mercedes hay Tesla, giờ đây sân chơi phương tiện tự hành mở ra cho cả những ông lớn công nghệ như Facebook, Google hay Intel.
+\begin{figure}[h]
+\centering 
+\includegraphics[width=130mm]{7.jpg} 
+\caption{Xe tự lái đưa vào hoạt động} 
+\label{dinhnghia} 
+\end{figure}
+
+\subsection{Nâng cấp các công nghệ trên xe tự lái}
+\newpage
+\begin{thebibliography}{9}
+\bibitem{link}https://www.gartner.com/en/information-technology/glossary/autonomous-vehicles
+\bibitem{link}https://robotlab.vn/chia-se-ve-cong-nghe-xe-tu-hanh-self-driving-car/?fbclid=IwAR263kAVN2pqGRENhloFq4xIGIyfYC76JpC215J0njnjWOhnk3VbLiOQc
+
+
+\end{thebibliography}
+ \end{document}
